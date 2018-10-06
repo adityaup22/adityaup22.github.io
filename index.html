@@ -9,14 +9,18 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127071084-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127071084-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-127071084-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-127071084-1');
+    </script>
 
     <style>
         body {
@@ -5490,12 +5494,12 @@
     <h1 class="myFontClass">Never Settle, You are not dust!</h1>
     <p>This is not me, This is animation [- ! -]</p>
     <div id="lottie"></div>
-    <p>Scroll Down  <span class="glyphicon glyphicon-arrow-down"></span></p>
+    <p href="#me" class="click_to_scroll">Scroll Down <span class="glyphicon glyphicon-arrow-down"></span></p>
 </div>
 
 <hr/>
 
-<div class="jumbotron text-center" style="background-color: #fff">
+<div class="jumbotron text-center" id="me" style="background-color: #fff">
     <h1 class="myFontClass">This is me, HardCoded</h1>
 </div>
 
@@ -5716,8 +5720,7 @@ def flatten_list(lis):
                     <div class="panel-body">
                         <kbd>Answer:</kbd>&nbsp;<br/>
                         <code style="word-wrap: break-word">
-                            print('\u0906\u0926\u093f\u0924\u094D\u092F
-                            \u0909\u092A\u093E\u0927\u094D\u092F\u093E\u092F')
+                            print('\u0906\u0926\u093f\u0924\u094D\u092F\u0909\u092A\u093E\u0927\u094D\u092F\u093E\u092F')
                         </code>
                     </div>
                 </div>
@@ -6183,6 +6186,12 @@ def flatten_list(lis):
                 $(this).addClass("slide");
             }
         });
+    });
+
+    $('.click_to_scroll').click(function () {
+        var clickedId = $(this).attr('href');
+        $('html, body').animate({scrollTop: ($(clickedId).offset().top)}, 1000);
+        return false;
     });
 
 </script>
