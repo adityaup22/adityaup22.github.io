@@ -5665,10 +5665,10 @@
                 <kbd>Solution:</kbd>
                 <code>
                             <pre class=".pull-left">
-def flatten_list(lis):
-    for item in lis:
+def flatten_list(input_list):
+    for item in input_list:
         if isinstance(item, list):
-            for x in flatten(item):
+            for x in flatten_list(item):
                 yield x
         else:
             yield item
